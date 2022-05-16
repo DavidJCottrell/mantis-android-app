@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.login.SignUpDialog">
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/new_email_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/email_input_placeholder"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress" />
+
+        <EditText
+            android:id="@+id/first_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/firstname_input_placeholder"
+            android:inputType="textPersonName"
+            android:autofillHints="name" />
+
+        <EditText
+            android:id="@+id/last_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/lastname_input_placeholder"
+            android:inputType="textPersonName"
+            android:autofillHints="name" />
+
+        <EditText
+            android:id="@+id/new_password_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:autofillHints="password"
+            android:ems="10"
+            android:hint="@string/password_input_placeholder"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/verify_new_password_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:autofillHints="password"
+            android:ems="10"
+            android:hint="@string/verify_new_password_input_placeholder"
+            android:inputType="textPassword" />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/submit_sign_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/sign_up_btn_text" />
+    </LinearLayout>
+
+</FrameLayout>

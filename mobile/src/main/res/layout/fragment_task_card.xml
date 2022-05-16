@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.dashboard.ProjectCard">
+
+    <!-- Stack Cards Vertically -->
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        tools:ignore="UselessParent">
+
+        <!-- Task Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="225dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            card_view:cardCornerRadius="4dp">
+
+            <!-- Stack Text Vertically -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" >
+
+                <!-- Task Title -->
+                <TextView
+                    android:id="@+id/task_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Task Description -->
+                <TextView
+                    android:id="@+id/task_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="Task Description" />
+
+                <!-- Divider Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <!-- Task Key -->
+                <TextView
+                    android:id="@+id/task_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="Task key" />
+
+                <!-- Task Status -->
+                <TextView
+                    android:id="@+id/task_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Status"
+                    android:layout_marginTop="2dp" />
+
+                <!-- Task Resolution -->
+                <TextView
+                    android:id="@+id/task_resolution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Resolution"
+                    android:layout_marginTop="2dp" />
+
+                <!-- Task Due Date -->
+                <TextView
+                    android:id="@+id/task_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Due Date"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+            <!-- Task Open Button -->
+            <TextView
+                android:id="@+id/task_open_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="bottom|left"
+                android:textStyle="bold"
+                android:text="Open Task" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</FrameLayout>

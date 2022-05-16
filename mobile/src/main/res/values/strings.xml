@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mantis-Client-App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_input_placeholder">Email</string>
+    <string name="password_input_placeholder">Password</string>
+    <string name="login_btn_text">Login</string>
+    <string name="sign_up_btn_text">Sign Up</string>
+    <string name="firstname_input_placeholder">Firstname</string>
+    <string name="lastname_input_placeholder">Lastname</string>
+    <string name="verify_new_password_input_placeholder">Verify Password</string>
+    <string name="your_projects">- Your Projects:</string>
+    <string name="loading_name">Loading name...</string>
+    <string name="your_details">Your Details:</string>
+</resources>
