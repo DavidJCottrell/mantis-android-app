@@ -18,6 +18,8 @@ public class Auth {
         SharedPreferences prefs = currentContext.getSharedPreferences("mantis_preferences", Context.MODE_PRIVATE);
         String token = prefs.getString("token", "");
 
+        Log.i("TOKEN", token);
+
         // Log the user out if they do not have a token
         if(token.equals("")) logout(currentContext);
         else isLoggedIn = true;

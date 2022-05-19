@@ -50,6 +50,7 @@ public class TaskCard extends Fragment {
         // Get UI elements to add data to
         TextView taskTitleTV = (TextView) view.findViewById(R.id.task_title);
         TextView taskDescTV = (TextView) view.findViewById(R.id.task_description);
+        TextView taskTypeTV = (TextView) view.findViewById(R.id.task_type);
         TextView taskKeyTV = (TextView) view.findViewById(R.id.task_key);
         TextView taskStatusTV = (TextView) view.findViewById(R.id.task_status);
         TextView taskResTV = (TextView) view.findViewById(R.id.task_resolution);
@@ -57,7 +58,8 @@ public class TaskCard extends Fragment {
         TextView openBtn = (TextView) view.findViewById(R.id.task_open_btn);
 
         taskTitleTV.setText(task.title);
-        taskDescTV.setText(task.title);
+        taskDescTV.setText(task.description);
+        taskTypeTV.setText(String.valueOf("Type: " + task.type));
         taskKeyTV.setText(String.valueOf("Key: " + task.taskKey));
         taskStatusTV.setText(String.valueOf("Status: " + task.status));
         taskResTV.setText(String.valueOf("Status: " + task.resolution));

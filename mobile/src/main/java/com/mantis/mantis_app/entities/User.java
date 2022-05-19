@@ -87,7 +87,5 @@ public class User {
         return null;
     }
 
-    public void setInvitations(List<Invitation> invitations) {
-        currentUser.invitations = invitations;
-    }
+    public void setInvitations(List<Invitation> invitations) { currentUser.invitations = invitations; }
 }

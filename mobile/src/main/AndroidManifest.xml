@@ -16,7 +16,7 @@
 
 
         <service
-            android:name="com.mantis.mantis_app.utils.BackgroundService"
+            android:name="com.mantis.mantis_app.utils.NotificationService"
             android:enabled="true"
             android:exported="true" >
         </service>

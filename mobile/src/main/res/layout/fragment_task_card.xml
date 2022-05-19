@@ -17,7 +17,7 @@
         <androidx.cardview.widget.CardView
             android:layout_gravity="center"
             android:layout_width="250dp"
-            android:layout_height="225dp"
+            android:layout_height="235dp"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="25dp"
             card_view:cardCornerRadius="4dp">
@@ -63,6 +63,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text="Task key" />
+
+
+                <!-- Task Type -->
+                <TextView
+                    android:id="@+id/task_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="Task type" />
 
                 <!-- Task Status -->
                 <TextView

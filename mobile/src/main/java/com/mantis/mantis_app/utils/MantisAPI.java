@@ -58,35 +58,68 @@ public class MantisAPI {
 
     public void login(JSONObject body){
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.POST,
-                baseURL + "/users/login/",
-                body,
-                response -> {
+            Request.Method.POST,
+            baseURL + "/users/login/",
+            body,
+            response -> {
+                try {
+                    String token = response.getString("token");
+                    User.parseUserData(response);
+                    Auth.login(this.context, token);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            },
+            error -> {
+                if(error.networkResponse != null){
+                    // API error alert dialog
+                    String errorResponse = null;
                     try {
-                        String token = response.getString("token");
-                        User.parseUserData(response);
-                        Auth.login(this.context, token);
-                    } catch (JSONException e) {
+                        errorResponse = new String(error.networkResponse.data, "utf-8").replace("\"", "");
+                        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                        alert.setMessage(errorResponse);
+                        alert.setCancelable(true);
+                        AlertDialog alertDialog = alert.create();
+                        alertDialog.show();
+                    } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                }, this::onAPIErrorFunc);
+                }
+            }
+        );
         queue.add(jsonObjectRequest);
     }
 
     public void signUp(JSONObject body){
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.POST,
-                baseURL + "/users/register/",
-                body,
-                response -> {
+            Request.Method.POST,
+            baseURL + "/users/register/",
+            body,
+            response -> {
+                try {
+                    String token = response.getString("token");
+                    User.parseUserData(response.getJSONObject("user"));
+                    Auth.login(this.context, token);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            },
+            error -> {
+                if(error.networkResponse != null){
+                    // API error alert dialog
+                    String errorResponse = null;
                     try {
-                        String token = response.getString("token");
-                        User.parseUserData(response.getJSONObject("user"));
-                        Auth.login(this.context, token);
-                    } catch (JSONException e) {
+                        errorResponse = new String(error.networkResponse.data, "utf-8").replace("\"", "");
+                        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                        alert.setMessage(errorResponse);
+                        alert.setCancelable(true);
+                        AlertDialog alertDialog = alert.create();
+                        alertDialog.show();
+                    } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                }, this::onAPIErrorFunc
+                }
+            }
         );
         queue.add(jsonObjectRequest);
     }

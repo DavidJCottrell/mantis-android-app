@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class BackgroundService extends Service {
-    public BackgroundService() {
+public class NotificationService extends Service {
+    public NotificationService() {
         super();
     }
 
@@ -42,7 +42,8 @@ public class BackgroundService extends Service {
 
         // Oreo requires notification channel
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel = new NotificationChannel("Invitation Notification", "Invitation Notification", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel("Invitation Notification",
+                    "Invitation Notification", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
@@ -64,13 +65,10 @@ public class BackgroundService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
-
         RequestQueue queue = Volley.newRequestQueue(this);
-
         String token = intent.getStringExtra("token");
-
         // Continuously check API for new invitations
-        Thread t1 = new Thread(() -> {
+        Thread checkForInvitationsT = new Thread(() -> {
             while(true){
                 try {
                     Log.i("Background Service", "Checking API...");
@@ -116,9 +114,7 @@ public class BackgroundService extends Service {
                 } catch (InterruptedException e) { e.printStackTrace(); }
             }
         });
-
-        t1.start();
-
+        checkForInvitationsT.start();
         return START_STICKY;
     }
 }

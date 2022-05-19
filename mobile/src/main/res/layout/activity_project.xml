@@ -16,14 +16,22 @@
         android:name="com.mantis.mantis_app.app.top_nav.TopNav" />
 
     <!-- Task cards -->
-    <LinearLayout
-        android:id="@+id/task_cards_fragment_container_view"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="120dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/top_nav_fragment_container"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_marginTop="120dp"
+            android:id="@+id/task_cards_fragment_container_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"/>
+    </ScrollView>
 
     <!-- No Tasks Notice -->
     <TextView
